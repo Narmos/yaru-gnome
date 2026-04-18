@@ -8,6 +8,12 @@ Il supprime certains éléments spécifiques à Ubuntu et adapte la configuratio
 
 L’objectif principal est d'obtenir un thème plus cohérent, neutre et compatible avec une expérience GNOME "Vanilla".
 
+**Exemple sur Debian avec le thème d'icônes Yaru-blue-dark original :**
+[![screenshot without script](https://raw.githubusercontent.com/Narmos/yaru-gnome/refs/heads/master/.github/readme_img/Yaru-without-script.png)](https://raw.githubusercontent.com/Narmos/yaru-gnome/refs/heads/master/.github/readme_img/Yaru-without-script.png)
+
+**Exemple sur Debian avec le thème d'icônes Yaru-blue-dark adapté via le script :**
+[![screenshot with script](https://raw.githubusercontent.com/Narmos/yaru-gnome/refs/heads/master/.github/readme_img/Yaru-with-script.png)](https://raw.githubusercontent.com/Narmos/yaru-gnome/refs/heads/master/.github/readme_img/Yaru-with-script.png)
+
 ---
 
 ## Détails du traitement
