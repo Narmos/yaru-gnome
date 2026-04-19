@@ -6,13 +6,14 @@ It removes certain Ubuntu-specific elements and adjusts the theme configuration 
 
 The main goal is to achieve a more consistent, neutral theme compatible with a **"vanilla" GNOME** experience.
 
-# Mon adaptation du pack d'icônes Yaru d'Ubuntu pour GNOME "Vanilla"
-
-Ce script adapte le pack d’icônes **Yaru** (utilisé par défaut dans Ubuntu) afin de mieux l'intégrer dans des environnements GNOME comme Debian, Fedora ou Arch Linux.
-
-Il supprime certains éléments spécifiques à Ubuntu et adapte la configuration du thème pour une meilleure intégration avec Adwaita, le thème par défaut de GNOME.
-
-L’objectif principal est d'obtenir un thème plus cohérent, neutre et compatible avec une expérience **GNOME "Vanilla"**.
+> ## French version:
+> ### Mon adaptation du pack d'icônes Yaru d'Ubuntu pour GNOME "Vanilla"
+> 
+> Ce script adapte le pack d’icônes **Yaru** (utilisé par défaut dans Ubuntu) afin de mieux l'intégrer dans des environnements GNOME comme Debian, Fedora ou Arch Linux.
+>
+> Il supprime certains éléments spécifiques à Ubuntu et adapte la configuration du thème pour une meilleure intégration avec Adwaita, le thème par défaut de GNOME.
+>
+> L’objectif principal est d'obtenir un thème plus cohérent, neutre et compatible avec une expérience **GNOME "Vanilla"**.
 
 ---
 
