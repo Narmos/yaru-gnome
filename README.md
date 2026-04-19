@@ -1,59 +1,79 @@
-# Mon adaptation du pack d'icône Yaru d'Ubuntu pour GNOME "Vanilla"
+# My adaptation of the Yaru icon pack from Ubuntu for "Vanilla" GNOME
 
-## Description
+This script adapts the **Yaru** icon pack (used by default in Ubuntu) for better integration into GNOME environments such as Debian, Fedora, or Arch Linux.
 
-Ce script permet d'adapter le pack d’icônes **Yaru** (utilisé par défaut dans Ubuntu) afin de mieux l'intégrer dans des environnements **GNOME** comme Debian, Fedora ou Arch Linux.
+It removes certain Ubuntu-specific elements and adjusts the theme configuration for improved integration with Adwaita, the default GNOME theme.
+
+The main goal is to achieve a more consistent, neutral theme compatible with a **"vanilla" GNOME** experience.
+
+# Mon adaptation du pack d'icônes Yaru d'Ubuntu pour GNOME "Vanilla"
+
+Ce script adapte le pack d’icônes **Yaru** (utilisé par défaut dans Ubuntu) afin de mieux l'intégrer dans des environnements GNOME comme Debian, Fedora ou Arch Linux.
 
 Il supprime certains éléments spécifiques à Ubuntu et adapte la configuration du thème pour une meilleure intégration avec Adwaita, le thème par défaut de GNOME.
 
-L’objectif principal est d'obtenir un thème plus cohérent, neutre et compatible avec une expérience GNOME "Vanilla".
+L’objectif principal est d'obtenir un thème plus cohérent, neutre et compatible avec une expérience **GNOME "Vanilla"**.
 
-**Exemple sur Debian avec le thème d'icônes Yaru-blue-dark original :**
+---
+
+## 🧪 Result
+
+**Example on Debian with the original Yaru-blue-dark icon theme:**
 [![screenshot without script](https://raw.githubusercontent.com/Narmos/yaru-gnome/refs/heads/master/.github/readme_img/Yaru-without-script.png)](https://raw.githubusercontent.com/Narmos/yaru-gnome/refs/heads/master/.github/readme_img/Yaru-without-script.png)
 
-**Exemple sur Debian avec le thème d'icônes Yaru-blue-dark adapté via le script :**
+**Example on Debian with the adapted Yaru-blue-dark icon theme:**
 [![screenshot with script](https://raw.githubusercontent.com/Narmos/yaru-gnome/refs/heads/master/.github/readme_img/Yaru-with-script.png)](https://raw.githubusercontent.com/Narmos/yaru-gnome/refs/heads/master/.github/readme_img/Yaru-with-script.png)
 
 ---
 
-## Détails du traitement
+## 🔍 What the script does
 
-* Copie du pack d’icônes Yaru vers le répertoire d'icônes de l'utilisateur courant `$HOME/.local/share/icons`
-  * Si le dossier `$HOME/.local/share/icons/Yaru` existe déjà, le script s'arrête
-  * Le dossier `icons` est automatiquement créé s'il n'existe pas
-* Pour chaque variant Yaru (Yaru, Yaru-blue, Yaru-blue-dark, etc.)
-  * Suppression des dossiers `scalable*`
-  * Suppression du fichier de cache (`icon-theme.cache`)
-  * Modification du fichier de thème (`index.theme`)
-    * Remplacement de l'héritage `Humanity` par `Adwaita`
-    * Nettoyage des références `scalable*/*`
+* Copy the Yaru icon pack to the current user's icon directory `$HOME/.local/share/icons`
+  * If the folder `$HOME/.local/share/icons/Yaru` already exists, the script stops.
+  * The `icons` folder is automatically created if it doesn't exist.
+* For each Yaru variant (Yaru, Yaru-blue, Yaru-blue-dark, etc.):
+  * Delete the `scalable*` folders.
+  * Delete the cache file `icon-theme.cache`.
+  * Modify the theme file `index.theme`.
+    * Replace the `Humanity` inheritance with `Adwaita`.
+    * Clean up `scalable*/*` references.
 
 ---
 
-## Structure
+## 📁 Structure
 
 ```bash
 .
 ├── script.sh              # Script
-├── 25.10.3/               # Pack d'icônes d'Ubuntu 25.10 (v3)
-├── 26.04.3/               # Pack d'icônes d'Ubuntu 26.04 (v3)
-├── 26.04.4/               # Pack d'icônes d'Ubuntu 26.04 (v4)
-└── icons/                 # Dossier généré uniquement en mode --test
+├── 25.10.3/               # Included icon pack from Ubuntu 25.10 (v3) - old design
+├── 26.04.3/               # Included icon pack from Ubuntu 26.04 (v3) - my favorite
+├── 26.04.4/               # Included icon pack from Ubuntu 26.04 (v4) - new redesign
+├── your_own_yaru/         # Your own Yaru icon pack retrieved from Ubuntu
+└── icons/                 # Folder generated only in test mode
 ```
 
 ---
 
-## Utilisation
+## 🚀 Usage
+
+The script must not be run as administrator.
 
 ```bash
 ./script.sh 26.04.4
+```
+> [!IMPORTANT]
+> The first parameter (required) must be the name of the folder containing the icon pack (located in the current directory).
+
+### Test mode
+
+```bash
 ./script.sh 26.04.4 --test
 ```
-
-> Le 1er paramètre (obligatoire) doit être le nom du dossier contenant le pack d'icônes (présent dans le dossier courant). Avec le 2ème paramètre (facultatif) `--test` la copie du pack d'icônes se fait dans le dossier courant `./icons` pour test/analyse.
+> [!NOTE]
+> The second parameter (optional), `--test`, copies the icon pack to the current directory `./icons` for testing/analysis.
 
 ---
 
-## Crédits
+## 🙏 Credits
 
-* [Projet Yaru (Ubuntu)](https://github.com/ubuntu/yaru)
+* [Yaru Project (Ubuntu)](https://github.com/ubuntu/yaru)
