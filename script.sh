@@ -13,9 +13,9 @@
 
 ICON_BASE_DIR="./$1"
 
-if [[ "$2" == "--test" ]]; then # test icons destination
+if [[ "$2" == "--test" ]]; then # test "icons" folder destination
     DEST_BASE_DIR="./icons"
-else # current user icons destination
+else # current user "icons" folder destination
     DEST_BASE_DIR="$HOME/.local/share/icons"
 fi
 
@@ -31,51 +31,51 @@ if [[ -z "$1" ]]; then # missing first parameter
     exit 1
 elif [[ -d "./$1" ]]; then # first parameter is an existing folder
     echo
-    echo "Starting install \"$1\" icons pack..."
+    echo "Starting install \"$1\" Yaru icon pack..."
     echo
 else # first parameter is not an existing folder
 	echo -e "\033[31mERROR\033[0m The \"$1\" folder was not found!"
     exit 1
 fi
 
-# If "Yaru" icons pack already exist
+# If Yaru icon pack already exist
 if [[ -d "$DEST_BASE_DIR/Yaru" ]]; then
     echo -e "\033[31mERROR\033[0m \"$DEST_BASE_DIR/Yaru\" folder already exist!"
     exit 1
 fi
 
-# If not exist, create icons folder
+# If not exist, create "icons" folder destination
 if ! [[ -d $DEST_BASE_DIR ]]; then
     echo "Create \"$DEST_BASE_DIR\" folder"
     mkdir $DEST_BASE_DIR
 fi
 
-# Copy icons pack to icons folder
-echo "Copy Yaru icons pack to \"$DEST_BASE_DIR\""
+# Copy icons pack to "icons" folder destination
+echo "Copy Yaru icon pack to \"$DEST_BASE_DIR\""
 cp -R $ICON_BASE_DIR/* $DEST_BASE_DIR
 echo
 
-# Process each Yaru icons folder
+# Process each Yaru icon folder
 for YARU_DIR in "$DEST_BASE_DIR"/Yaru*; do
     [ -d "$YARU_DIR" ] || continue
 
     echo "$YARU_DIR : "
 
-    echo " - Remove scalable* subfolders"
+    echo " - Delete scalable* subfolders"
     rm -R $YARU_DIR/scalable*
 
-    echo " - Remove icon-theme.cache file"
+    echo " - Delete icon-theme.cache file"
     rm $YARU_DIR/icon-theme.cache
 
     echo " - Replace Humanity with Adwaita inherits in index.theme"
     sed -i "s/Humanity/Adwaita/g" "$YARU_DIR/index.theme"
 
-    echo " - Clean all scalable references in index.theme"
-    # 1. Remove scalable*/* in "Directories"
+    echo " - Clean up scalable references in index.theme"
+    # 1. Delete scalable*/* in "Directories"
     sed -i 's/,scalable.*\/.*//g' "$YARU_DIR/index.theme"
-    # 2. Remove "[scalable*/*]" blocks
+    # 2. Delete "[scalable*/*]" blocks
     sed -i '/\[scalable.*\/.*\]/,/^$/d' "$YARU_DIR/index.theme"
-    # 3. Remove extra eventual commas
+    # 3. Delete extra eventual commas
     sed -i 's/,,/,/g; s/,$//' "$YARU_DIR/index.theme"
 
     echo
