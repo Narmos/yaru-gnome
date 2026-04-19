@@ -13,23 +13,28 @@
 
 ICON_BASE_DIR="./$1"
 
-if [[ "$2" == "--test" ]]; then
-    DEST_BASE_DIR="./icons" #TEST
-else
-    DEST_BASE_DIR="$HOME/.local/share/icons" #PROD
+if [[ "$2" == "--test" ]]; then # test icons destination
+    DEST_BASE_DIR="./icons"
+else # current user icons destination
+    DEST_BASE_DIR="$HOME/.local/share/icons"
 fi
 
 # Checks before run script
-if [[ -z "$1" ]]; then
-    echo -e "\033[31mERROR\033[0m argument is missing!"
-    echo "Usage: $(basename $0) yaru_folder"
+if [[ $(id -u) -eq "0" ]]; then # sudo/root
+	echo -e "\033[31mERROR\033[0m The script must not be run as root!"
+	exit 1
+fi
+
+if [[ -z "$1" ]]; then # missing first parameter
+    echo -e "\033[31mERROR\033[0m The first (required) parameter is missing!"
+    echo " Usage: $(basename $0) yaru_folder"
     exit 1
-elif [[ -d "./$1" ]]; then
+elif [[ -d "./$1" ]]; then # first parameter is an existing folder
     echo
     echo "Starting install \"$1\" icons pack..."
     echo
-else
-	echo -e "\033[31mERROR\033[0m folder \"$1\" not found!"
+else # first parameter is not an existing folder
+	echo -e "\033[31mERROR\033[0m The \"$1\" folder was not found!"
     exit 1
 fi
 
