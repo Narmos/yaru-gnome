@@ -19,10 +19,10 @@ The main goal is to achieve a more consistent, neutral theme compatible with a *
 
 ## 🧪 Result
 
-**Example on Debian with the original Yaru-blue-dark icon theme:**
+**Example on Debian with the original Yaru-dark icon theme:**
 [![screenshot without script](https://raw.githubusercontent.com/Narmos/yaru-gnome/refs/heads/master/.github/readme_img/Yaru-without-script.png)](https://raw.githubusercontent.com/Narmos/yaru-gnome/refs/heads/master/.github/readme_img/Yaru-without-script.png)
 
-**Example on Debian with the adapted Yaru-blue-dark icon theme:**
+**Example on Debian with the adapted Yaru-dark icon theme:**
 [![screenshot with script](https://raw.githubusercontent.com/Narmos/yaru-gnome/refs/heads/master/.github/readme_img/Yaru-with-script.png)](https://raw.githubusercontent.com/Narmos/yaru-gnome/refs/heads/master/.github/readme_img/Yaru-with-script.png)
 
 ---
